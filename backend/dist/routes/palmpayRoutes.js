@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.palmpayRouter = void 0;
+const express_1 = require("express");
+const palmpayController_1 = require("../controllers/palmpayController");
+const authGuard_1 = require("../middlewares/authGuard");
+exports.palmpayRouter = (0, express_1.Router)();
+exports.palmpayRouter.post('/payments/palmpay/create', authGuard_1.authenticateJWT, palmpayController_1.PalmPayController.createPayment);
+exports.palmpayRouter.post('/payments/palmpay/verify', palmpayController_1.PalmPayController.verifyPayment);
+exports.palmpayRouter.post('/webhooks/palmpay', palmpayController_1.PalmPayController.webhook);

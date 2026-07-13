@@ -1,0 +1,91 @@
+name: CI/CD Pipeline - Fundi Service Tanzania
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: fundi_db
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: './fundi-service-tanzania/backend/package.json'
+
+      - name: Install Backend Dependencies
+        run: npm install --prefix ./fundi-service-tanzania/backend
+
+      - name: Run Backend Integration Tests
+        env:
+          DB_USER: postgres
+          DB_PASSWORD: postgres
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_NAME: fundi_db
+          JWT_SECRET: testing_key
+          NODE_ENV: test
+        run: npm test --prefix ./fundi-service-tanzania/backend
+
+      - name: Build Backend Production Code
+        run: npm run build --prefix ./fundi-service-tanzania/backend
+
+      - name: Install Frontend Dependencies
+        run: npm install --prefix ./fundi-service-tanzania/frontend
+
+      - name: Build Frontend React/Vite PWA
+        run: npm run build --prefix ./fundi-service-tanzania/frontend
+
+      - name: Set up Flutter Environment (Mobile Build)
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.x'
+          channel: 'stable'
+
+      - name: Install Flutter Dependencies
+        run: |
+          cd fundi-service-tanzania/mobile
+          flutter pub get
+
+      - name: Build Android Release APK and App Bundle (AAB)
+        run: |
+          cd fundi-service-tanzania/mobile
+          flutter build apk --release
+          flutter build appbundle --release
+
+      - name: Upload Built APK and AAB Binaries to Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-release-binaries
+          path: |
+            fundi-service-tanzania/mobile/build/app/outputs/flutter-apk/app-release.apk
+            fundi-service-tanzania/mobile/build/app/outputs/bundle/release/app-release.aab
+
+      - name: Simulated Server Auto-Deployment via Docker
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          echo "Deploying applications to production Ubuntu Server..."
+          echo "Deployment completed successfully."

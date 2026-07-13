@@ -1,0 +1,59 @@
+[2026-07-02 08:30:30:3030] [[31merror[39m]: [31m[AppController] Seeding versions failed: [39m
+[31mInvalid `prisma.appVersion.count()` invocation in[39m
+[31mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:31:45[39m
+
+[31m  28   fs.writeFileSync(fundiMockApk, 'MOCK_FUNDI_APK_BINARY_CONTENT');[39m
+[31m  29 }[39m
+[31m  30 [39m
+[31m→ 31 const count = await prisma.appVersion.count([39m
+[31mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[31mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-02 08:30:34:3034] [[31merror[39m]: [31m[AppController] Seeding versions failed: [39m
+[31mInvalid `prisma.appVersion.count()` invocation in[39m
+[31mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:31:45[39m
+
+[31m  28   fs.writeFileSync(fundiMockApk, 'MOCK_FUNDI_APK_BINARY_CONTENT');[39m
+[31m  29 }[39m
+[31m  30 [39m
+[31m→ 31 const count = await prisma.appVersion.count([39m
+[31mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[31mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-02 08:30:34:3034] [[31merror[39m]: [31m[AppController] Download failed: [39m
+[31mInvalid `prisma.appVersion.findFirst()` invocation in[39m
+[31mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:79:53[39m
+
+[31m  76 [39m
+[31m  77 try {[39m
+[31m  78   // 2. Fetch the latest version from db[39m
+[31m→ 79   const latestVersion = await prisma.appVersion.findFirst([39m
+[31mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[31mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-02 08:30:35:3035] [[31merror[39m]: [31m[AppController] Download failed: [39m
+[31mInvalid `prisma.appVersion.findFirst()` invocation in[39m
+[31mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:79:53[39m
+
+[31m  76 [39m
+[31m  77 try {[39m
+[31m  78   // 2. Fetch the latest version from db[39m
+[31m→ 79   const latestVersion = await prisma.appVersion.findFirst([39m
+[31mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[31mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-10 21:49:49:4949] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-10 21:50:54:5054] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-10 22:49:32:4932] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:17:39:1739] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:20:43:2043] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:24:34:2434] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:27:09:279] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:29:50:2950] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:54:10:5410] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:57:14:5714] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 18:59:31:5931] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 19:01:50:150] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 19:11:54:1154] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 19:18:05:185] [[31merror[39m]: [31mFailed to decrypt data:[39m
+[2026-07-11 19:21:43:2143] [[31merror[39m]: [31mFailed to decrypt data:[39m

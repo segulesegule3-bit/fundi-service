@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # 1. Database Service (PostGIS enabled PostgreSQL)
+  db:
+    image: postgis/postgis:15-3.3
+    container_name: fundi_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: fundi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ../database/seed.sql:/docker-entrypoint-initdb.d/2-seed.sql
+
+  # 2. Redis Cache & Queue Manager
+  redis:
+    image: redis:7-alpine
+    container_name: fundi_redis_cache
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # 3. Node.js Backend API Container
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: fundi_backend_api
+    restart: always
+    environment:
+      - PORT=5000
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=fundi_db
+      - JWT_SECRET=super_secret_key_change_me_in_production
+      - SMS_GATEWAY=mock
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - redis
+
+  # 4. Web reverse proxy (Nginx) serving compiled frontend builds & routing API proxies
+  nginx:
+    image: nginx:alpine
+    container_name: fundi_nginx_ingress
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../frontend/dist:/usr/share/nginx/html:ro
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

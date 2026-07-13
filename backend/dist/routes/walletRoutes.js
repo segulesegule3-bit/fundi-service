@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.walletRouter = void 0;
+const express_1 = require("express");
+const walletController_1 = require("../controllers/walletController");
+const authGuard_1 = require("../middlewares/authGuard");
+const client_1 = require("@prisma/client");
+exports.walletRouter = (0, express_1.Router)();
+exports.walletRouter.get('/balance', authGuard_1.authenticateJWT, walletController_1.WalletController.getBalance);
+exports.walletRouter.post('/deposit', authGuard_1.authenticateJWT, walletController_1.WalletController.deposit);
+exports.walletRouter.get('/transactions', authGuard_1.authenticateJWT, walletController_1.WalletController.getTransactions);
+exports.walletRouter.get('/audit', authGuard_1.authenticateJWT, (0, authGuard_1.requireRole)([client_1.Role.ADMIN, client_1.Role.SUPER_ADMIN]), walletController_1.WalletController.auditTransactions);

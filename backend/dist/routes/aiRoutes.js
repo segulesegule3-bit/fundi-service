@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.aiRouter = void 0;
+const express_1 = require("express");
+const aiController_1 = require("../controllers/aiController");
+exports.aiRouter = (0, express_1.Router)();
+exports.aiRouter.post('/ai/match-fundi', aiController_1.AIController.matchFundi);
+exports.aiRouter.post('/ai/price-estimate', aiController_1.AIController.priceEstimate);
+exports.aiRouter.post('/ai/fraud-check', aiController_1.AIController.fraudCheck);
+exports.aiRouter.get('/ai/demand-insights', aiController_1.AIController.demandInsights);
+exports.aiRouter.post('/ai/chat', aiController_1.AIController.chatSupport);
+exports.aiRouter.get('/ai/fair-market-price', aiController_1.AIController.fairMarketPrice);
+exports.aiRouter.get('/ai/popular-services', aiController_1.AIController.popularServices);
+exports.aiRouter.get('/ai/high-demand-locations', aiController_1.AIController.highDemandLocations);
+exports.aiRouter.get('/ai/recommend-warranty', aiController_1.AIController.recommendWarranty);
+exports.aiRouter.get('/ai/high-risk-fundis', aiController_1.AIController.highRiskFundis);
