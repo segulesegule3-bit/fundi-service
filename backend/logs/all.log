@@ -5003,3 +5003,180 @@
 [33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
 
 [33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 17:37:48:3748] [[33mwarn[39m]: [33m[AppController] Prisma seeding failed/skipped (expected in mock environment): [39m
+[33mInvalid `prisma.appVersion.count()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:31:45[39m
+
+[33m  28   fs.writeFileSync(fundiMockApk, 'MOCK_FUNDI_APK_BINARY_CONTENT');[39m
+[33m  29 }[39m
+[33m  30 [39m
+[33m→ 31 const count = await prisma.appVersion.count([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 17:40:42:4042] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 17:40:42:4042] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 17:48:32:4832] [[33mwarn[39m]: [33m[AppController] Database connection failed. Serving mock APK fallback: [39m
+[33mInvalid `prisma.appVersion.findFirst()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:81:53[39m
+
+[33m  78 [39m
+[33m  79 try {[39m
+[33m  80   // 2. Fetch the latest version from db[39m
+[33m→ 81   const latestVersion = await prisma.appVersion.findFirst([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 17:48:32:4832] [[32minfo[39m]: [32m[AppController] Downloading customer-v1.0.0.apk (32 bytes) from IP ::1[39m
+[2026-07-16 17:59:59:5959] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 18:00:02:02] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 18:00:47:047] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 18:00:49:049] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 18:09:43:943] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 18:09:43:943] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 19:59:19:5919] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 19:59:21:5921] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 20:38:41:3841] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 20:38:41:3841] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 22:16:18:1618] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
+[2026-07-16 22:16:20:1620] [[33mwarn[39m]: [33m[AppController] DB Query fallback on version list query: [39m
+[33mInvalid `prisma.appVersion.findMany()` invocation in[39m
+[33mC:\Users\segul\OneDrive\Desktop\fundi-service-tanzania\backend\src\controllers\appController.ts:248:52[39m
+
+[33m  245 ];[39m
+[33m  246 [39m
+[33m  247 try {[39m
+[33m→ 248   const releases = await prisma.appVersion.findMany([39m
+[33mAuthentication failed against database server, the provided database credentials for `postgres` are not valid.[39m
+
+[33mPlease make sure to provide valid database credentials for the database server at the configured address.[39m
